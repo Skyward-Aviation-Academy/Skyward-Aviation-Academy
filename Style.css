@@ -1,0 +1,947 @@
+/* ================================
+   GENERAL HEADER AND NAVIGATION STYLES
+   ================================ */
+
+/* Header Styles */
+header {
+  background-color: #084760;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 4.5em;
+  color: #ff7700;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  margin-top: -110px;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #084760;
+  padding: 15px 0;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  border: 5px solid #ff7700;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 10px 20px;
+  border-right: 3px solid #ff7700;
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+nav a:hover, .active {
+  color: orange;
+}
+
+/* ================================
+   RESPONSIVENESS FOR SMALLER SCREENS
+   ================================ */
+
+@media screen and (max-width: 768px) {
+  nav {
+    width: 90%; /* Adjusted to 90% to match other containers */
+    padding: 10px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    border-right: none;
+  }
+  
+  nav a {
+    font-size: 1.2em;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+  }
+}
+
+/* ================================
+   BODY CONTENT ADJUSTMENTS
+   ================================ */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
+  background-color: #084760;
+  padding-top: 130px;
+}
+
+/* ================================
+   HOME PAGE SPECIFIC STYLES
+   ================================ */
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('Images/Home-Page-Image.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding-top: 50px;
+}
+
+.welcome h2 {
+  color: #ff7700;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.welcome p {
+  color: #ff7700;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.orange-line {
+  width: 100%;
+  height: 6px;
+  background-color: #ff7700;
+}
+
+/* ================================
+   ABOUT US PAGE SPECIFIC STYLES
+   ================================ */
+
+/* About Container */
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  background: #084760;
+}
+
+.about-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FF7700;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  font-size: 1.2em;
+  color: white;
+  margin-bottom: 40px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* About Sections (History, Mission & Values, etc.) */
+.about-section {
+  border: 3px solid #FF7700;
+  border-radius: 10px;
+  background: white;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h3 {
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FF7700;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1.3em;
+  color: black;
+  line-height: 1.6;
+}
+
+/* ================================
+   STAFF PROFILES SECTION
+   ================================ */
+
+/* Staff Profiles Grid - 2 Columns */
+.staff-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Staff Profile Cards */
+.staff-item {
+  background: white;
+  border: 3px solid #FF7700;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.staff-item img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #084760;
+}
+
+.staff-item h4 {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #084760;
+  margin-bottom: 10px;
+}
+
+.staff-item p {
+  font-size: 1.2em;
+  color: black;
+}
+
+/* Responsive: Stack staff profiles in one column on small screens */
+@media (max-width: 768px) {
+  .staff-items {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+}
+
+/* ================================
+   PROGRAMS PAGE SPECIFIC STYLES
+   ================================ */
+
+.programs-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.programs-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FF7700;
+  margin-bottom: 20px;
+}
+
+.programs-description {
+  font-size: 1.2em;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.program-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Program Items: Use fluid width so they adjust to the container */
+.program-item {
+  border: 2px solid #FF7700;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%; /* No fixed max so it fills the container */
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.program-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.program-item h3 {
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FF7700;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.program-item p {
+  font-size: 1.3em;
+  color: white;
+  padding: 15px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.learn-more-button {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  background: #FF7700;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid #FF7700;
+  transition: background 0.3s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 2;
+  margin-top: 15px;
+}
+
+.learn-more-button:hover {
+  background: #FFA500;
+  transform: scale(1.05);
+}
+
+/* Background Images for Programs */
+.ppl {
+  background-image: url('Images/PPL-Image.jpg');
+}
+
+.ifr {
+  background-image: url('Images/IFR-Image.jpg');
+}
+
+.multi-engine {
+  background-image: url('Images/Multi-Engine-Image.jpg');
+}
+
+.cpl {
+  background-image: url('Images/CPL-Image.jpg');
+}
+
+.cfi {
+  background-image: url('Images/CFI-Image.jpg');
+}
+
+/* ================================
+   RESOURCES PAGE SPECIFIC STYLES
+   ================================ */
+
+.resources-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.resources-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FF7700;
+  margin-bottom: 20px;
+}
+
+.resources-description {
+  font-size: 1.2em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.resource-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.resource-item {
+  border: 2px solid #FF7700;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resource-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.resource-item h3 {
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #FF7700;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.resource-item p {
+  font-size: 1.3em;
+  color: white;
+  padding: 15px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.resources-container .learn-more-button {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  background: #FF7700;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid #FF7700;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.resources-container .learn-more-button:hover {
+  background: #FFA500;
+  transform: scale(1.05);
+}
+
+/* Background Images for Resources */
+.fleet-simulators {
+  background-image: url('Images/Simulator-Image.jpg');
+}
+
+.instructors {
+  background-image: url('Images/CFI-Image.jpg');
+}
+
+.safety-maintenance {
+  background-image: url('Images/Safety-&-Maintenance-Image.jpeg');
+}
+
+.faqs {
+  background-image: url('Images/Home-Page-Image.jpg');
+}
+
+/* ================================
+   CONTACT US PAGE STYLING
+   ================================ */
+
+.contact-us {
+  background-color: #084760;
+  color: #FFFFFF;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-us h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #FFA500;
+  margin-bottom: 20px;
+}
+
+.contact-us p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* ================================
+   LOCATION STYLING
+   ================================ */
+
+.contact-location {
+  background-color: #054D72;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border: 3px solid #FF7700;
+}
+
+.contact-location h3 {
+  font-size: 2em;
+  color: #FF7700;
+  margin-bottom: 10px;
+}
+
+.contact-location p {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+/* ================================
+   APPOINTMENTS AND BOOKINGS STYLING
+   ================================ */
+
+.contact-appointments {
+  background-color: #054D72;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border: 3px solid #FF7700;
+}
+
+.contact-appointments h3 {
+  font-size: 2em;
+  color: #FF7700;
+  margin-bottom: 10px;
+}
+
+.contact-appointments p {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+.contact-appointments .booking-info {
+  font-size: 1.2em;
+  color: #FFFFFF;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* ================================
+   INQUIRIES SECTION STYLING
+   ================================ */
+
+.contact-inquiries {
+  background-color: #054D72;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border: 3px solid #FF7700;
+}
+
+.contact-inquiries h3 {
+  font-size: 2em;
+  color: #FF7700;
+  margin-bottom: 10px;
+}
+
+.contact-inquiries p {
+  font-size: 1.2em;
+  color: #FFFFFF;
+}
+
+/* ================================
+   CONTACT FORM STYLING
+   ================================ */
+
+.contact-form {
+  margin-top: 40px;
+}
+
+.contact-form form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #054D72;
+  border-radius: 10px;
+  border: 3px solid #FF7700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1.2em;
+  color: #FFA500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  border: 2px solid #FF7700;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #333333;
+  text-align: center;
+}
+
+.contact-form textarea {
+  height: 120px;
+}
+
+.contact-form button {
+  background-color: #FF7700;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #FFA500;
+}
+
+/* ================================
+   CONTACT MAP STYLING
+   ================================ */
+
+.contact-map {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contact-map iframe {
+  width: 80%;
+  height: 400px;
+  border: 5px solid #FF7700;
+  border-radius: 10px;
+}
+
+/* ================================
+   FOOTER STYLES
+   ================================ */
+
+footer {
+  background-color: #084760;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+footer a {
+  color: #FF7700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #FFA500;
+}
+
+/* ================================
+   BUTTON STYLES
+   ================================ */
+
+/* Return Button */
+.return-button {
+  display: block;
+  width: 200px;
+  margin: 40px auto;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background-color: #FF7700;
+  border: 2px solid #FF7700;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.return-button:hover {
+  background-color: #FFA500;
+}
+
+/* ================================
+   IMAGE STYLES
+   ================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   PAGE CONTENT STYLES
+   ================================ */
+
+/* Section Titles */
+.section-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #FF7700;
+  margin-bottom: 20px;
+}
+
+/* Section Content */
+.section-content {
+  font-size: 1.3em;
+  color: white;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ================================
+   RESPONSIVENESS FOR SMALLER SCREENS
+   (Tablets & Mobile)
+   ================================ */
+
+/* Tablet Styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+  }
+  
+  nav {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    border-right: none;
+  }
+  
+  nav a {
+    font-size: 1.2em;
+  }
+  
+  /* Home Page */
+  .home-section {
+    height: auto;
+    padding-top: 80px;
+  }
+  
+  .welcome h2 {
+    font-size: 2.5em;
+  }
+  
+  /* Programs, Resources, About, Contact */
+  .programs-container, 
+  .resources-container, 
+  .about-container, 
+  .contact-us {
+    padding: 40px 20px;
+  }
+  
+  .program-item, .resource-item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-top: 20px;
+  }
+  
+  .program-item h3, .resource-item h3 {
+    font-size: 2em;
+  }
+  
+  .program-item p, .resource-item p {
+    font-size: 1em;
+  }
+  
+  /* Staff Profiles */
+  .staff-items {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+  
+  /* Contact Us Page */
+  .contact-us, .contact-location, .contact-inquiries, .contact-appointments {
+    padding: 40px 20px;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 90%;
+  }
+  
+  .contact-form button {
+    font-size: 1.1em;
+    padding: 8px 16px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px;
+  }
+}
+
+/* Mobile Styles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+    margin-top: 0;
+  }
+  
+  nav a {
+    font-size: 1em;
+  }
+  
+  .welcome h2 {
+    font-size: 2em;
+  }
+  
+  .welcome p {
+    font-size: 1.2em;
+  }
+  
+  .programs-title, .resources-title, .about-title {
+    font-size: 2.5em;
+  }
+  
+  .program-item, .resource-item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-top: 15px;
+  }
+  
+  .program-item h3, .resource-item h3 {
+    font-size: 1.8em;
+  }
+  
+  .program-item p, .resource-item p {
+    font-size: 1em;
+  }
+  
+  .contact-us h2 {
+    font-size: 1.7em;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 90%;
+  }
+  
+  .contact-form button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+}
+
+/* ================================
+   RESPONSIVE TABLE STYLES (for Pricing Table)
+   ================================ */
+
+.pricing-table {
+  width: 100%;
+  margin: 30px 0;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.pricing-table th, 
+.pricing-table td {
+  padding: 12px;
+  border: 1px solid #FF7700;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.pricing-table th {
+  background-color: #084760;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+.pricing-table td {
+  font-size: 1.2em;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .pricing-table {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Appointment confirmation for Skyward Aviation Academy.">
+  <meta name="author" content="Skyward Aviation Academy">
+  <title>Appointment Confirmation - Skyward Aviation Academy</title>
+  <link rel="stylesheet" href="Style.css">
+
+  <script>
+    window.onload = function() {
+      // Retrieve appointment data from localStorage
+      const appointmentName = localStorage.getItem("appointmentName");
+      const appointmentEmail = localStorage.getItem("appointmentEmail");
+      const appointmentDate = localStorage.getItem("appointmentDate");
+      const appointmentTime = localStorage.getItem("appointmentTime");
+
+      // Display appointment details
+      document.getElementById("appointment-name").textContent = appointmentName;
+      document.getElementById("appointment-email").textContent = appointmentEmail;
+      document.getElementById("appointment-date").textContent = appointmentDate;
+      document.getElementById("appointment-time").textContent = appointmentTime;
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #084760;
+    }
+
+    header {
+      background-color: #084760;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .confirmation {
+      text-align: center;
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #084760;
+      padding: 40px;
+      border-radius: 10px;
+      border: 4px solid #FF7700;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .confirmation h2 {
+      font-size: 2.5em;
+      color: #FF7700;
+    }
+
+    .confirmation p {
+      font-size: 1.2em;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .confirmation ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .confirmation li {
+      margin: 10px 0;
+    }
+
+    .confirmation li strong {
+      color: #FF7700;
+    }
+
+    .back-button {
+      display: inline-block;
+      font-size: 1.2em;
+      color: #FF7700;
+      text-decoration: none;
+      margin-top: 20px;
+      padding: 10px;
+      border: 2px solid #FF7700;
+      border-radius: 25px;
+      background-color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #FF7700;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section with Text Logo -->
+  <header>
+    <h1>Skyward Aviation Academy</h1>
+  </header>
+
+  <!-- Confirmation Section -->
+  <div class="confirmation">
+    <h2>Your Appointment has been Confirmed!</h2>
+    <p>Thank you for booking an appointment with Skyward Aviation Academy.</p>
+    <p>Here are your appointment details:</p>
+    <ul>
+      <li><strong>Name:</strong> <span id="appointment-name"></span></li>
+      <li><strong>Email:</strong> <span id="appointment-email"></span></li>
+      <li><strong>Date:</strong> <span id="appointment-date"></span></li>
+      <li><strong>Time:</strong> <span id="appointment-time"></span></li>
+    </ul>
+    <p>We look forward to seeing you!</p>
+
+    <!-- Back Button to Contact Us -->
+    <a href="Contact-us.html" class="back-button">
+      Back to Contact Us
+    </a>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Skyward Aviation Academy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

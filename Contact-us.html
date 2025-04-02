@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Skyward Aviation Academy for inquiries, appointments, and location details.">
+  <meta name="author" content="Skyward Aviation Academy">
+  <title>Contact Us - Skyward Aviation Academy</title>
+  <link rel="stylesheet" href="Style.css">
+
+  <script>
+    function submitInquiry(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Display the custom notification
+      const notification = document.getElementById("notification");
+      notification.style.display = "block";
+      
+      // Hide the notification after 5 seconds
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 5000);
+
+      // Reset the form if needed
+      document.querySelector('.contact-form form').reset();
+    }
+
+    function bookAppointment(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const appointmentName = document.getElementById("appointment-name").value;
+      const appointmentEmail = document.getElementById("appointment-email").value;
+      const appointmentDate = document.getElementById("appointment-date").value;
+      const appointmentTime = document.getElementById("appointment-time").value;
+
+      const appointmentDateObj = new Date(appointmentDate);
+      const appointmentDay = appointmentDateObj.getDay(); // Get the day of the week (0 - Sunday, 6 - Saturday)
+
+      // Exclude Sunday (6) from available days
+      if (appointmentDay === 6) {
+        alert("Appointments cannot be scheduled on Sundays.");
+        return;
+      }
+
+      const appointmentHour = parseInt(appointmentTime.split(':')[0], 10);
+      if (appointmentHour < 8 || appointmentHour >= 17) {
+        alert("Appointments can only be made between 8:00 AM and 5:00 PM.");
+        return;
+      }
+
+      localStorage.setItem("appointmentName", appointmentName);
+      localStorage.setItem("appointmentEmail", appointmentEmail);
+      localStorage.setItem("appointmentDate", appointmentDate);
+      localStorage.setItem("appointmentTime", appointmentTime);
+
+      // Redirect to the confirmation page
+      window.location.href = "Appointment-Confirmation.html";
+    }
+  </script>
+
+  <style>
+    .notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FF7700;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      display: none;
+    }
+
+    /* Add CSS for the orange text */
+    .contact-us h2 {
+      color: #FF7700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section with Text Logo -->
+  <header>
+    <div class="container">
+      <h1>Skyward Aviation Academy</h1>
+    </div>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="About-us.html">About Us</a></li>
+      <li><a href="Programs.html">Programs</a></li>
+      <li><a href="Resources.html">Resources</a></li>
+      <li><a href="Contact-us.html" class="active">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Orange Line Below Navigation Bar -->
+  <div class="orange-line"></div>
+
+  <!-- Contact Us Main Section -->
+  <div class="contact-us">
+    <h2>Contact Skyward Aviation Academy</h2>
+    <p>We are here to assist you with any inquiries or appointments. Please feel free to reach out, and we’ll be happy to help!</p>
+  </div>
+
+  <!-- Location Section -->
+  <div class="contact-location">
+    <h3>Our Location</h3>
+    <p>Skyward Aviation Academy is located at Orlando Executive Airport, Orlando, Florida.</p>
+    
+    <!-- Google Maps Embed -->
+    <div class="contact-map">
+      <iframe 
+        src="https://maps.google.com/maps?q=Orlando%20Executive%20Airport&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Inquiry Section -->
+  <div class="contact-inquiries">
+    <h3>General Inquiries</h3>
+    <p>If you have any questions about our programs, requirements, or any general information, please fill out the form below, and we will get back to you as soon as possible.</p>
+
+    <div class="contact-form">
+      <form onsubmit="submitInquiry(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Appointment Section -->
+  <div class="contact-appointments">
+    <h3>Book an Appointment</h3>
+    <p>Schedule an appointment with us. Appointments are available Monday to Saturday from 8 a.m. to 5 p.m.</p>
+
+    <div class="contact-form">
+      <form onsubmit="bookAppointment(event)">
+        <label for="appointment-name">Name:</label>
+        <input type="text" id="appointment-name" name="appointment-name" required>
+
+        <label for="appointment-email">Email:</label>
+        <input type="email" id="appointment-email" name="appointment-email" required>
+
+        <label for="appointment-date">Select a Date:</label>
+        <input type="date" id="appointment-date" name="appointment-date" required>
+
+        <label for="appointment-time">Select a Time:</label>
+        <input type="time" id="appointment-time" name="appointment-time" required>
+
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Popup -->
+  <div id="notification" class="notification">
+    <p>Your inquiry has been submitted! We will get back to you as soon as possible.</p>
+  </div>
+
+  <!-- Orange Line Above Footer -->
+  <div class="orange-line"></div>
+    
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Skyward Aviation Academy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
